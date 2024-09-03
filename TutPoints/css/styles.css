@@ -1,0 +1,315 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+}
+.navbar {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background-color: #333;
+    z-index: 1000; /* Ensures it stays on top of other content */
+}
+
+#homePageBody{
+    height: 80vh;
+}
+
+.navbar-brand {
+    color: white;
+    font-size: 40px;
+    font-weight: 600;
+}
+
+.navbar-brand:hover {
+    color: rgb(214, 214, 214);
+}
+
+.navbar-nav .dropdown-menu {
+    background: black;
+}
+
+/* Default styles for navigation links */
+.navbar ul li a {
+    color: #ffffff; /* Default text color */
+    text-decoration: none; /* Remove underline from links */
+}
+
+/* Hover effect for navigation links */
+.navbar ul li a:hover {
+    color: #f0f0f0; /* Color when hovered (light gray for better contrast) */
+    background-color: #343a40; /* Darker background to highlight the hover effect */
+}
+
+.navbar-nav .nav-link.active, .navbar-nav .nav-link.show {
+    color: rgb(5 255 4);
+}
+
+/* Dropdown styles */
+.navbar .nav-item.dropdown:hover .dropdown-menu {
+    display: block; /* Show dropdown menu on hover */
+}
+
+/* Ensure the dropdown menu is hidden by default */
+.dropdown-menu {
+    display: none; /* Hide dropdown menu */
+    position: absolute; /* Position relative to parent */
+    background-color: #343a40; /* Dark background for dropdown */
+    border: 1px solid #495057; /* Border color */
+}
+
+/* Dropdown items */
+.dropdown-item {
+    color: #ffffff; /* Default text color for dropdown items */
+}
+
+/* Hover effect for dropdown items */
+.dropdown-item:hover {
+    color: #f0f0f0; /* Color when hovered */
+    background-color: #495057; /* Slightly different background for better contrast */
+}
+
+.navbar-expand-lg .navbar-nav .dropdown-menu {
+    width: 100%;
+    border-left: groove;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    height: 100vh;
+    position: fixed;
+    top: 56px; /* Height of navbar */
+    left: 0;
+    padding-top: 15px;
+    overflow-y: auto;
+    margin-top: 15px;
+    padding-bottom: 10%;
+    margin-bottom: 0px;
+}
+
+/* Tutorial Card design */
+.h-100 {
+    position: relative; /* Ensure the card's position is relative for the pseudo-element */
+    border: 0.5px solid rgb(182, 182, 182); /* Transparent border to prevent layout shifts */
+    border-radius: 8px; /* Optional: to give the card rounded corners */
+    overflow: hidden; /* Ensure the glow doesn't overflow the card */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+  }
+
+  .h-100:hover {
+    transform: scale(1.05); /* Slightly enlarge the card for a subtle zoom effect */
+    box-shadow: 0 0 10px rgba(0, 4, 255, 0.5), /* Green outer glow */
+                0 0 20px rgba(0, 17, 255, 0.4), /* Larger green glow */
+                0 0 30px rgba(0, 26, 255, 0.3); /* Even larger green glow */
+  }
+
+  .h-100::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: inherit; /* Match the card's border-radius */
+    box-shadow: inset 0 0 10px rgba(0, 17, 255, 0.4); /* Inner glow effect */
+    opacity: 0; /* Hidden by default */
+    pointer-events: none; /* Ensure it does not block interactions */
+    transition: opacity 0.3s ease; /* Smooth transition for inner glow */
+  }
+
+  .h-100:hover::before {
+    opacity: 1;
+  }
+
+@media (max-width: 768px) {
+    .sidebar {
+        position: static;
+        height: auto;
+    }
+}
+
+.nav-link{
+    border-radius: 5px;
+}
+
+/* Active Topic Link */
+.nav-link.active {
+    background-color: #0d6efd;
+    color: white !important;
+    border-radius: 5px;
+}
+
+/* Main Content Padding */
+#contentArea {
+    padding: 20px;
+}
+
+/* Footer Styling */
+.footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    width: 100%;
+    position: fixed; /* Fixes the footer to the bottom of the viewport */
+    bottom: 0;       /* Positions the footer at the bottom of the viewport */
+    left: 0;         /* Ensures the footer stretches the full width */
+}
+
+/* CSS for styling code blocks */
+pre {
+    background-color: #f5f5f5; /* Light gray background */
+    padding: 15px; /* Add some padding around the code */
+    border-radius: 4px; /* Rounded corners */
+    border: 1px solid #ddd; /* Light border around the code block */
+    overflow-x: auto; /* Allow horizontal scrolling for long code lines */
+    font-size: 14px; /* Set font size */
+    line-height: 1.6; /* Improve readability */
+    margin-bottom: 20px; /* Space between code block and next element */
+}
+
+code {
+    font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    color: #d6336c; /* Code text color */
+}
+
+/* Additional styling for inline code (if needed) */
+pre code {
+    background-color: transparent; /* Remove default background color for inline code */
+}
+
+/* Scoped CSS for code blocks and headings within the content area */
+#contentArea pre {
+    background-color: #d1d0d0;
+    padding: 15px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    overflow-x: auto;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+#contentArea code {
+    font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    color: #000000;
+}
+
+#contentArea h4 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    font-weight: 600;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 5px;
+}
+
+/* Container for the code block and copy button */
+.code-container {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+/* Style the copy button */
+.copy-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: white;
+    border: 2px solid white;
+    background: rgb(255, 255, 255); /* Semi-transparent white background */;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+    z-index: 10; /* Ensures the copy button is above other elements */
+}
+
+.copy-btn:hover {
+    background-color: #007bff;
+}
+
+/* Style the copy icon */
+.copy-icon {
+    width: 20px;
+    height: 20px;
+}
+
+
+/* Main content styles for about us page */
+.main-content h1, .main-content h2 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.main-content p {
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: #555;
+}
+
+.main-content ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.main-content ul li {
+    margin-bottom: 10px;
+    color: #555;
+}
+
+
+
+/* Include this in your existing styles.css */
+.about-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    max-width: 1200px;
+    margin: 50px auto;
+}
+
+.about-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.about-content {
+    max-width: 600px;
+    margin-left: 50px;
+}
+
+.about-content h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.about-content p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    line-height: 1.5;
+    color: #555;
+}
+
+.read-more-btn {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #ff5e7e;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 50px;
+    font-size: 18px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.read-more-btn:hover {
+    background-color: #e04a68;
+}
